@@ -6,7 +6,7 @@ document.getElementById("buy_button").addEventListener('click',function () {
 
 setTimeout(function () {
     $(".WhCbCzViwwt").css("display", "block");
-}, 213e4);
+}, 219e4);
 
 var today = new Date();
 
