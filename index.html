@@ -12,10 +12,16 @@
         gtag('config', 'G-GMBGLDXMYG');
     </script>
 
-    <link rel="preload" href="https://scripts.converteai.net/ebf40105-407b-4da3-90d3-f2b1bdecdc23/players/63d9aefb7b79bf0009f62d56/player.js" as="script">
+    <link rel="preload"
+        href="https://scripts.converteai.net/ebf40105-407b-4da3-90d3-f2b1bdecdc23/players/63d9aefb7b79bf0009f62d56/player.js"
+        as="script">
     <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
-    <link rel="preload" href="https://images.converteai.net/ebf40105-407b-4da3-90d3-f2b1bdecdc23/players/63d9aefb7b79bf0009f62d56/thumbnail.jpg" as="image">
-    <link rel="preload" href="https://cdn.converteai.net/ebf40105-407b-4da3-90d3-f2b1bdecdc23/63d9aafd7b79bf0009f62d21/playlist.m3u8" as="fetch">
+    <link rel="preload"
+        href="https://images.converteai.net/ebf40105-407b-4da3-90d3-f2b1bdecdc23/players/63d9aefb7b79bf0009f62d56/thumbnail.jpg"
+        as="image">
+    <link rel="preload"
+        href="https://cdn.converteai.net/ebf40105-407b-4da3-90d3-f2b1bdecdc23/63d9aafd7b79bf0009f62d21/playlist.m3u8"
+        as="fetch">
     <link rel="dns-prefetch" href="https://cdn.converteai.net">
     <link rel="dns-prefetch" href="https://scripts.converteai.net">
     <link rel="dns-prefetch" href="https://images.converteai.net">
@@ -371,9 +377,9 @@
 
 <body>
     <style>
-        .WhCbCzViwwt {
+        /*.WhCbCzViwwt {
             display: none
-        }
+        }*/
 
         @media (max-width: 640px) {
             html {
@@ -772,12 +778,10 @@
                     border-radius: 0px !important;
                 }
             </style>
-
             <!--
             <div class="video-kaEbZvx1bkQ">
             </div>
             -->
-
             <div id="vid_63d9aefb7b79bf0009f62d56" style="position:relative;width:100%;padding: 56.25% 0 0;"><img
                     id="thumb_63d9aefb7b79bf0009f62d56"
                     src="https://images.converteai.net/ebf40105-407b-4da3-90d3-f2b1bdecdc23/players/63d9aefb7b79bf0009f62d56/thumbnail.jpg"
@@ -788,6 +792,56 @@
             </div>
             <script type="text/javascript"
                 id="scr_63d9aefb7b79bf0009f62d56">var s = document.createElement("script"); s.src = "https://scripts.converteai.net/ebf40105-407b-4da3-90d3-f2b1bdecdc23/players/63d9aefb7b79bf0009f62d56/player.js", s.async = !0, document.head.appendChild(s);</script>
+
+            <style>
+                .esconder {
+                    display: none
+                }
+            </style>
+
+            <script type="text/javascript">
+                document.addEventListener("DOMContentLoaded", function () {
+                    /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+                    var SECONDS_TO_DISPLAY = 2160;
+                    var CLASS_TO_DISPLAY = ".esconder";
+
+                    /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+                    var attempts = 0;
+                    var elsHiddenList = [];
+                    var elsDisplayed = false;
+                    var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+                    var alreadyDisplayedKey = `alreadyElsDisplayed${SECONDS_TO_DISPLAY}`
+                    var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+
+                    setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+
+                    var showHiddenElements = function () {
+                        elsDisplayed = true;
+                        elsHiddenList.forEach((e) => e.style.display = "block");
+                        localStorage.setItem(alreadyDisplayedKey, true)
+                    }
+
+                    var startWatchVideoProgress = function () {
+                        if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+                            if (attempts >= 10) return;
+                            attempts += 1;
+                            return setTimeout(function () { startWatchVideoProgress() }, 1000);
+                        }
+
+                        smartplayer.instances[0].on('timeupdate', () => {
+                            if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+                            if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+                            showHiddenElements();
+                        })
+                    }
+
+                    if (alreadyElsDisplayed === 'true') {
+                        setTimeout(function () { showHiddenElements(); }, 100);
+                    } else {
+                        startWatchVideoProgress()
+                    }
+                });
+            </script>
 
             <div class="description-WbLKTNKp5VL">
                 <style>
@@ -824,7 +878,7 @@
                     </h3>
                 </div>
             </div>
-            <div class="button-IWiNKI0399434 WhCbCzViwwt">
+            <div class="button-IWiNKI0399434 esconder">
                 <style>
                     a.button-IWiNKI0399434-element {
                         background-color: #6096ba;
@@ -855,10 +909,10 @@
                         }
                     }
                 </style>
-                <a href="https://sun.eduzz.com/1773429" id="buy_button" target="_blank"
-                    class="btn button-IWiNKI0399434-element ">
-                    COMPRAR AGORA
-                </a>
+                    <a href="https://sun.eduzz.com/1773429" id="buy_button" target="_blank"
+                        class="btn button-IWiNKI0399434-element ">
+                        COMPRAR AGORA
+                    </a>
             </div>
             <style>
                 .px-1 {
@@ -1553,7 +1607,7 @@
                     </p>
                 </div>
             </div>
-            <div class="button-nmYvzv4924929 WhCbCzViwwt">
+            <div class="button-nmYvzv4924929 esconder">
                 <style>
                     a.button-nmYvzv4924929-element {
                         background-color: #6096ba;
@@ -1584,10 +1638,12 @@
                         }
                     }
                 </style>
-                <a href="https://sun.eduzz.com/1773429" id="buy_button" target="_blank"
-                    class="btn button-nmYvzv4924929-element ">
-                    COMPRAR AGORA
-                </a>
+                <div class= "esconder">
+                    <a href="https://sun.eduzz.com/1773429" id="buy_button" target="_blank"
+                        class="btn button-nmYvzv4924929-element ">
+                        COMPRAR AGORA
+                    </a>
+                </div>
             </div>
         </div>
     </div>
